@@ -28,7 +28,7 @@ const CreateContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [{ whiskyItems}, dispatch] = useStateValue();
   
-  
+    
   const uploadImage = (e) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
@@ -69,10 +69,11 @@ const CreateContainer = () => {
     };
     const deleteImage = () => {
       setIsLoading(true);
-    const deleteRef = ref(storage, imageAsset);
-    deleteObject(deleteRef).then(() => {
+      const deleteRef = ref(storage, imageAsset);
+      deleteObject(deleteRef).then(() => {
       setImageAsset(null);
       setIsLoading(false);
+      setFields(true)
       setMsg("Image deleted successfully!");
       setAlertStatus("success");
       setTimeout(() => {
@@ -99,8 +100,7 @@ const CreateContainer = () => {
           category: category,
           quantity: 1,
           price: price,
-        }
-        
+        };
         saveItem(data);
         setIsLoading(false);
         setFields(true);

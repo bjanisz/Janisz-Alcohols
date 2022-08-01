@@ -14,10 +14,6 @@ const MainContainer = () => {
 
   useEffect(() => {}, [scrollValue, cardShow]);
 
-  const handleOnClick = () => {
-    console.log('click')
-  }
-
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center 2xl:-mt-32">
       <HomeContainer />

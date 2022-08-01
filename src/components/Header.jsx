@@ -75,18 +75,16 @@ function Header() {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8"
           >
-            <li className="text-base cursor-pointer text-yellow-600 hover:text-headingColor duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)} ">
+            <li className="text-base cursor-pointer text-yellow-600 hover:text-white duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)} ">
               Home
             </li>
-            <li className="text-base cursor-pointer text-yellow-600 hover:text-headingColor duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)}">
+            <li className="text-base cursor-pointer text-yellow-600 hover:text-white duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)}">
               Menu
             </li>
-            <li className="text-base cursor-pointer text-yellow-600 hover:text-headingColor duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)}">
-              About Us
+            <li className="text-base cursor-pointer text-yellow-600 hover:text-white duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)}">
+              Contact
             </li>
-            <li className="text-base cursor-pointer text-yellow-600 hover:text-headingColor duration-100 transition-all ease-in-out onClick={() => setIsMenu(false)}">
-              Service
-            </li>
+            
           </motion.ul>
 
           <div className="relative flex items-center justify-center" onClick={showCard}>

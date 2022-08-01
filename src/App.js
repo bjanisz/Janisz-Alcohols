@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Header, MainContainer, CreateContainer } from "./components";
+import { Header, MainContainer, CreateContainer, Footer } from "./components";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -9,14 +9,14 @@ import { getAllWhiskyItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 
 const App = () => {
-  const [{ whiskyItems}, dispatch] = useStateValue();
+  const [{ whiskyItems }, dispatch] = useStateValue();
 
   const fetchData = async () => {
-   await getAllWhiskyItems().then((data) => {
+    await getAllWhiskyItems().then((data) => {
       dispatch({
         type: actionType.SET_WHISKY_ITEMS,
-        whiskyItems: data
-      })
+        whiskyItems: data,
+      });
     });
   };
 
@@ -24,10 +24,8 @@ const App = () => {
     fetchData();
   }, []);
 
-
   return (
     <AnimatePresence exitBeforeEnter>
-    
       <div className="w-screen h-auto flex flex-col bg-primary">
         <Header />
 
@@ -37,6 +35,7 @@ const App = () => {
             <Route path="/createItem" element={<CreateContainer />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </AnimatePresence>
   );

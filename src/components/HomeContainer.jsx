@@ -3,7 +3,7 @@ import { FaShippingFast } from "react-icons/fa";
 import background from "../img/background.jpg";
 import { productsData } from "../utils/data";
 
-function HomeContainer() {
+const HomeContainer = () => {
   return (
     <section
       className="grid grid-cols-1 md:grid-cols-2 gap-2 px-4 py-2 w-full h-screen bg-cardOverlay"
@@ -38,7 +38,7 @@ function HomeContainer() {
           aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
           eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est,
           qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit,
-          sed quia non numquam eius modi tempora incidunt, ut labore et dolore
+                    sed quia non numquam eius modi tempora incidunt, ut labore et dolore
           magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
           nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
           aliquid ex ea commodi consequatur? Quis autem vel eum iure

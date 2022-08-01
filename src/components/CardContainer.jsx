@@ -10,7 +10,7 @@ import CardItem from "./CardItem";
 const CardContainer = () => {
   const [{ cardShow, cardItems, user }, dispatch] = useStateValue();
   const [flag, setFlag] = useState(1);
-  const [tot, setTot] = useState(0)
+  const [tot, setTot] = useState(0);
 
   const showCard = () => {
     dispatch({
@@ -21,7 +21,7 @@ const CardContainer = () => {
 
   useEffect(()=> {
     let totalPrice = cardItems.reduce(function (accumulator, item){
-      return accumulator + item.qty * item.price;
+      return accumulator + item.quantity * item.price;
    }, 0);
    setTot(totalPrice);
   }, [tot, flag]);
@@ -53,7 +53,7 @@ const CardContainer = () => {
           className="flex items-center gap-2 p-1 px-2 my-2 bg-slate-200 rounded-md hover:shadow-md cursor-pointer text-black text-base"
           onClick={clearCard}
         >
-          Clear <RiRefreshFill />{" "}
+          Clear <RiRefreshFill />
         </motion.p>
       </div>
 
@@ -72,7 +72,7 @@ const CardContainer = () => {
           <div className="w-full flex-1 bg-cardOverlay rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
             <div className="w-full flex items-center justify-between">
               <p className="text-white text-lg">Sub Total</p>
-              <p className="text-white text-lg">${tot}</p>
+              <p className="text-white text-lg">$ {tot}</p>
             </div>
             <div className="w-full flex items-center justify-between">
               <p className="text-white text-lg">Delivery</p>
@@ -81,7 +81,7 @@ const CardContainer = () => {
             <div className="w-full border-b border-yellow-800 my-2"></div>
             <div className="w-full flex items-center justify-between">
               <p className="text-white text-xl font-semibold">Total</p>
-              <p className="text-white text-xl font-semibold">${tot + 5}</p>
+              <p className="text-white text-xl font-semibold">$ {tot + 5}</p>
             </div>
             {/*if the user is not logged in, check out button is unclickable*/}
             {user ? (
@@ -90,8 +90,7 @@ const CardContainer = () => {
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-900 text-black text-lg my-2 hover:shadow-lg"
               >
-                {" "}
-                Check Out{" "}
+                Check Out
               </motion.button>
             ) : (
               <motion.button
@@ -99,8 +98,7 @@ const CardContainer = () => {
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-900 text-black text-lg my-2 hover:shadow-lg"
               >
-                {" "}
-                Login to check out{" "}
+                Login to check out
               </motion.button>
             )}
           </div>

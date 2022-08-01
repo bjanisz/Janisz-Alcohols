@@ -7,3 +7,4 @@ export {default as RowContainer} from './RowContainer';
 export {default as MenuContainer} from './MenuContainer';
 export {default as CardContainer} from './CardContainer';
 export {default as CardItem} from './CardItem';
+export {default as Footer} from './Footer';
