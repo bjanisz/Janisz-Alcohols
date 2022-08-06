@@ -27,7 +27,7 @@ export const DashboardBestsellersProducts = ({scrollValue}) => {
       }, [shoppingBagProducts])
 
       const [state123, setState123] = useState(1)
-      console.log('state123', state123)
+      console.log('state123', state123) 
     return (
         <ShoppingBagContext.Provider value={{test: state123}}>
             <button onClick={() => setState123(state123 + 1)}>add</button>
