@@ -6,7 +6,7 @@ import { actionType } from "../context/reducer";
 
 let items = [];
 
-const CardItem = ({ item, setFlag, flag }) => {
+const CardItem = ({ item}) => {
   const [{ cardItems }, dispatch] = useStateValue();
   const [quantity, setQuantity] = useState(item.quantity);
 
@@ -24,7 +24,6 @@ const CardItem = ({ item, setFlag, flag }) => {
       cardItems.map((item) => {
         if (item.id === id) {
           item.quantity += 1;
-          setFlag(flag + 1);
         }
       });
       cardDispatch();
@@ -32,15 +31,13 @@ const CardItem = ({ item, setFlag, flag }) => {
         //initial state value is 1 -> check if it equals to 1 and then remove it
       if (quantity === 1) {
         items = cardItems.filter((item) => item.id !== id);
-        setFlag(flag + 1);
         cardDispatch();
       } else {
         setQuantity(quantity - 1);
         cardItems.map((item) => {
-          if (item.id == id) {
+          if (item.id === id) {
             item.quantity -= 1;
-            setFlag(flag + 1);
-          }
+            }
         });
         cardDispatch();
       }
@@ -63,7 +60,7 @@ const CardItem = ({ item, setFlag, flag }) => {
         <p className="text-base text-yellow-500 pl-4"> {item?.title}</p>
         <p className="text-sm block text-white font-semibold pl-4">
           {" "}
-          $ {parseFloat(item?.price) * quantity}
+          $ {(item?.price) * quantity}
         </p>
       </div>
       {/* button section */}

@@ -5,7 +5,7 @@ import InstagramIcon from "../img/instagram-icon.png";
 import Logo from "../img/logo.jpg";
 import { motion } from "framer-motion";
 
-function Footer() {
+export const Footer = () => {
   return (
     <div className="bg-slate-700 flex flex-row items-center justify-around w-full h-auto mt-0 p-2 border-t-solid border-t-2 border-t-yellow-600">
       <div>
@@ -36,5 +36,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;

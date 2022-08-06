@@ -9,7 +9,6 @@ import CardItem from "./CardItem";
 
 const CardContainer = () => {
   const [{ cardShow, cardItems, user }, dispatch] = useStateValue();
-  const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
 
   const showCard = () => {
@@ -24,7 +23,7 @@ const CardContainer = () => {
       return accumulator + item.quantity * item.price;
    }, 0);
    setTot(totalPrice);
-  }, [tot, flag]);
+  }, [tot]);
 
   const clearCard = () => {
     dispatch({
@@ -34,6 +33,7 @@ const CardContainer = () => {
 
     localStorage.setItem("cardItems", JSON.stringify([]));
   }
+
 
   return (
     <motion.div
@@ -64,7 +64,7 @@ const CardContainer = () => {
           <div className="w-full h-340 md:h-42 px-6 py-10 flex flex-col gap-3 overflow-y-scroll scrollbar-none">
             {/* card item */}
             {cardItems && cardItems.length > 0 &&
-              cardItems.map((item) => (<CardItem key={item.id} item={item} setFlag={setFlag} flag={flag} />))}
+              cardItems.map((item) => (<CardItem key={item.id} item={item} />))}
           </div>
 
           {/* card total section */}

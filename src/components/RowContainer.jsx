@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
-const RowContainer = ({ flag, data, scrollValue }) => {
+const RowContainer = ({ data, scrollValue }) => {
   const rowContainer = useRef();
 
-  const [items, setitems] = useState([])
+  const [items, setItems] = useState([])
 
   const [{ cardItems }, dispatch] = useStateValue();
 
@@ -32,7 +32,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
     <div
       ref={rowContainer}
       className={`w-full flex items-center gap-3 my-12 bg-yellow-800 bg-opacity-30 scroll-smooth ${
-        flag
+        true
           ? "overflow-x-scroll scrollbar-none"
           : "overflow-x-hidden flex-wrap justify-center"
       }`}
@@ -53,7 +53,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
               <motion.div
                 whileTap={{ scale: 0.75 }}
                 className="w-8 h-8 rounded-full bg-red-700 flex items-center justify-center cursor-pointer hover:shadow-md"
-                onClick={() => setitems([...cardItems, item])}
+                onClick={() => setItems([...cardItems, item])}
               >
                 <MdShoppingBag className="text-white" />
               </motion.div>
